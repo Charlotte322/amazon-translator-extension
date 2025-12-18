@@ -1,0 +1,1 @@
+# amazon-translator-extension
