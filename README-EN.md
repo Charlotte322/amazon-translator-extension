@@ -1,5 +1,4 @@
 Amazon Chinese-English Real-Time Translation Browser Extension (Local LLM Powered)
-
 ---
 
 ## English Description
@@ -29,6 +28,19 @@ Compared with free translation tools/third-party APIs, the paid value of this ex
 2. Local LLM: Prepared fine-tuned `Llama3.1-8b-q4_k_m.gguf` file
 3. LLM Runtime Environment: Ensure local support for GGUF format models (e.g., configure llama.cpp or similar dependencies in advance)
 
+### Model Acquisition
+This plugin relies on the fine-tuned large model `Llama3.1-8b-q4_k_m.gguf`, which has been published on Hugging Face Hub. You can obtain it through the following methods:
+- Direct Download: [Llama3.1-8b-q4_k_m.gguf](https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator/blob/main/Llama3.1-8b-q4_k_m.gguf)
+- Hugging Face Repository URL: [https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator](https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator)
+
+#### Download Instructions
+1. A Hugging Face account is required (free to register)
+2. You can download in bulk via the Hugging Face CLI:
+   ```bash
+   pip install huggingface-hub
+   hf_hub_download --repo-id Charlotte322/Llama3.1-8b-amazon-translator --filename Llama3.1-8b-q4_k_m.gguf --local-dir ./models
+   ```
+
 ### Installation Steps
 #### Chrome Browser
 1. Download the repository code or the packaged extension from the Releases page
@@ -39,11 +51,12 @@ Compared with free translation tools/third-party APIs, the paid value of this ex
 6. Click the extension icon, configure the local file path of `Llama3.1-8b-q4_k_m.gguf` in the popup, and save
 
 #### Edge Browser
-1. Open Edge and navigate to `edge://extensions/` to access the Extensions Management page
-2. Enable "Developer mode" (location may vary by version, usually in the top-right corner)
-3. Click "Load unpacked" and select the `chrome-extension` folder of this project
-4. The extension icon will appear in the browser's top-right corner — installation complete
-5. Click the extension icon, configure the local file path of `Llama3.1-8b-q4_k_m.gguf` in the popup, and save
+1. Download the repository code or the packaged extension from the Releases page
+2. Open Edge and navigate to `edge://extensions/` to access the Extensions Management page
+3. Enable "Developer mode" (location may vary by version, usually in the top-right corner)
+4. Click "Load unpacked" and select the `chrome-extension` folder of this project
+5. The extension icon will appear in the browser's top-right corner — installation complete
+6. Click the extension icon, configure the local file path of `Llama3.1-8b-q4_k_m.gguf` in the popup, and save
 
 ### Usage
 1. Open any Amazon product detail page, click the seller's name next to "Sold by", then click "Ask a question" under "Have a question for [Seller Name]?" to access the customer service chat window
@@ -57,12 +70,6 @@ The development of this extension and LLM fine-tuning have invested a great deal
 #### One-Time Payment (Lifetime Access)
 - USD: $14.99 (PayPal supported)
 
-#### Sponsorship Channels
-- WeChat Pay: [Insert WeChat payment QR code link]
-- Alipay: [Insert Alipay payment QR code link]
-- PayPal: [Insert PayPal payment link]
-- Buy Me a Coffee: [Insert Buy Me a Coffee link]
-
 #### Sponsorship Benefits
 1. Unlock all premium features with one-time payment (unlimited usage)
 2. Join the exclusive user group to get one-on-one technical support (resolving model configuration, extension usage, etc.)
@@ -75,6 +82,5 @@ MIT License
 ### Acknowledgements
 - Fine-tuned based on the Llama3.1-8b model
 - Thanks to Chrome/Edge extension ecosystem
-- Thanks to Hugging Face & GitHub platforms
-
+- Thanks to GitHub platforms
 - Thanks to all paid users and sponsors for their support
