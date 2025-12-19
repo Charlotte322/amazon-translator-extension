@@ -28,6 +28,18 @@
 2. 本地大模型：已准备好微调后的 `Llama3.1-8b-q4_k_m.gguf` 文件
 3. 模型运行环境：确保本地支持 GGUF 格式模型运行（需提前配置相关依赖，如 llama.cpp 等）
 
+### 模型获取
+本插件依赖的微调后大模型 `Llama3.1-8b-q4_k_m.gguf` 已发布至 Hugging Face Hub，可通过以下方式获取：
+- 直接下载：[Llama3.1-8b-q4_k_m.gguf](https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator/blob/main/Llama3.1-8b-q4_k_m.gguf)
+- Hugging Face 仓库地址：[https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator](https://huggingface.co/Charlotte322/Llama3.1-8b-amazon-translator)
+
+#### 下载说明
+1. 需拥有 Hugging Face 账号（免费注册）
+2. 可通过 Hugging Face CLI 批量下载：
+   ```bash
+   pip install huggingface-hub
+   hf_hub_download --repo-id Charlotte322/Llama3.1-8b-amazon-translator --filename Llama3.1-8b-q4_k_m.gguf --local-dir ./models
+
 ### 安装步骤
 #### Chrome 浏览器
 1. 下载本仓库代码，或从 Releases 页面下载打包好的插件
@@ -38,11 +50,12 @@
 6. 点击插件图标，在弹窗中配置本地 `Llama3.1-8b-q4_k_m.gguf` 模型的文件路径，保存即可
 
 #### Edge 浏览器
-1. 打开 Edge，输入 `edge://extensions/` 进入「扩展管理页」
-2. 开启页面右上角的「开发者模式」（不同版本位置可能略有差异）
-3. 点击「加载已解压的扩展」，选择本项目的 `chrome-extension` 文件夹
-4. 浏览器右上角出现插件图标，安装完成
-5. 点击插件图标，在弹窗中配置本地 `Llama3.1-8b-q4_k_m.gguf` 模型的文件路径，保存即可
+1. 下载本仓库代码，或从 Releases 页面下载打包好的插件
+2. 打开 Edge，输入 `edge://extensions/` 进入「扩展管理页」
+3. 开启页面右上角的「开发者模式」（不同版本位置可能略有差异）
+4. 点击「加载已解压的扩展」，选择本项目的 `chrome-extension` 文件夹
+5. 浏览器右上角出现插件图标，安装完成
+6. 点击插件图标，在弹窗中配置本地 `Llama3.1-8b-q4_k_m.gguf` 模型的文件路径，保存即可
 
 ### 使用方法
 1. 打开任意亚马逊商品详情页，点击右侧「Sold by」旁边的卖家名称，在「Have a question for [卖家名称]?」下方点击「Ask a question」，即可进入客服沟通页
