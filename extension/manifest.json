@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "亚马逊买家对话实时翻译助手",
+  "version": "1.0.0",
+  "description": "在亚马逊买家对话框中，将中文实时翻译为英文。",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.amazon.com/*",
+    "https://*.amazon.co.uk/*",
+    "https://*.amazon.de/*",
+    "http://localhost:3000/*"  // 允许访问你的本地代理服务器
+  ],
+  "content_scripts": [
+  {
+    "matches": [
+      // 精确匹配你当前使用的联系卖家页面路径
+      "https://www.amazon.com/gp/help/contact-seller/contact-seller.html*",
+      // 保留更通用的联系页面模式，以覆盖其他变体
+      "https://www.amazon.com/gp/help/contact/*",
+      // 可选的通用消息页面模式，扩大覆盖范围
+      "https://www.amazon.com/*/messages/*",
+      "https://www.amazon.com/messaging/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_end",
+    "all_frames": false // 输入框在主页面，因此无需注入到所有iframe
+  }
+],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "翻译设置"
+  }
+}

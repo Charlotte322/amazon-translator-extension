@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>亚马逊翻译助手设置</title>
+    <style>
+        body {
+            width: 320px;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f6f6f6;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FF9900, #146EB4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 12px;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        .subtitle {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+        .setting-label {
+            font-size: 14px;
+            color: #333;
+        }
+        .setting-desc {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .3s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #146EB4;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        .delay-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .delay-value {
+            font-size: 14px;
+            color: #146EB4;
+            font-weight: 500;
+            min-width: 40px;
+            text-align: center;
+        }
+        .delay-slider {
+            width: 120px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: #e0e0e0;
+            border-radius: 2px;
+            outline: none;
+        }
+        .delay-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #146EB4;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 4px 0;
+        }
+        .status-label {
+            color: #666;
+        }
+        .status-value {
+            color: #333;
+            font-weight: 500;
+        }
+        .status-value.online {
+            color: #0a9928;
+        }
+        .status-value.offline {
+            color: #d63636;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #146EB4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .button:hover {
+            background: #0d5a8c;
+        }
+        .footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">A</div>
+            <div>
+                <div class="title">亚马逊翻译助手</div>
+                <div class="subtitle">AI实时翻译</div>
+            </div>
+        </div>
+
+        <div class="setting-item">
+            <div>
+                <div class="setting-label">启用翻译助手</div>
+                <div class="setting-desc">在亚马逊消息页面自动检测输入框</div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="toggleExtension" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <div>
+                <div class="setting-label">实时翻译</div>
+                <div class="setting-desc">输入时自动翻译中文内容</div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="toggleAutoTranslate" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <div>
+                <div class="setting-label">翻译延迟</div>
+                <div class="setting-desc">输入后等待的时间(毫秒)</div>
+            </div>
+            <div class="delay-control">
+                <input type="range" id="delaySlider" min="300" max="1500" step="100" value="600" class="delay-slider">
+                <span id="delayValue" class="delay-value">600ms</span>
+            </div>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <span class="status-label">扩展状态：</span>
+                <span id="extensionStatus" class="status-value online">运行中</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">后端服务：</span>
+                <span id="serverStatus" class="status-value">检测中...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">版本：</span>
+                <span id="versionInfo" class="status-value">1.0.0</span>
+            </div>
+        </div>
+
+        <button id="testTranslation" class="button">测试翻译功能</button>
+        
+        <div class="footer">
+            <div>Powered by Local LLM (LM Studio)</div>
+            <div id="lastUpdate">最后检测: --</div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
