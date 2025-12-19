@@ -76,4 +76,5 @@ MIT License
 - Fine-tuned based on the Llama3.1-8b model
 - Thanks to Chrome/Edge extension ecosystem
 - Thanks to Hugging Face & GitHub platforms
+
 - Thanks to all paid users and sponsors for their support
